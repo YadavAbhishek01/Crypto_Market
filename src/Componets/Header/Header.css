@@ -1,0 +1,52 @@
+.header{
+    display: flex;
+    position: relative;
+    align-items: center;
+    /* padding-right: 5%; */
+    /* padding-left: 5%;   */
+         padding: 2%;
+    /* padding-top: 2%;     */
+    /* background-color: rgb(81, 81, 165); */
+    /* border-radius: 10px; */
+    border-bottom: 1px solid rgb(32, 41, 83);
+  
+    justify-content: space-between;
+}
+.header .links{
+    display: flex;
+    position: relative;
+
+}
+.links ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+.links ul li{
+    list-style: none;   
+    font-size: 1.5rem;
+}
+.right{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:2rem
+}
+.right select{
+    padding: 0.5rem;                
+    border: none; 
+    font-size: 1rem;      
+    border-radius: 5px;
+    outline: none;     
+}
+
+.right button{   
+    padding:  0.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+   }

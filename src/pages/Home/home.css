@@ -1,0 +1,81 @@
+.home {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding:  0px 20px; */
+    margin-top: 10%;
+    width: 100%;
+    
+}
+
+.home h1 {
+    font-size: 5rem;
+    width: 100%;
+}
+
+.home p {
+    font-size: 1.4rem;
+    width:52%;
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+.home form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 2%;
+    padding-bottom: 2rem;
+}
+
+.home form input {
+    padding: 1rem 1rem;
+    width: 80%;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.home form button {
+    padding: 1rem 0px;
+    width: 20%;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.2rem;
+    border: none;
+    background-color: blueviolet;
+
+}
+.cypto-table{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:90%;
+    height: 20%;
+}
+.table-layout{
+    display: flex;      
+    background-color: transparent;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    padding: 1rem;
+    background-color: rgb(118, 47, 199);       
+    box-shadow:10px 10px 30px rgba(0,0,0,0.2);                
+}
+.table-layout h5{
+    text-transform: capitalize;
+    display: flex;
+    font-size: 1.5rem;      
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
