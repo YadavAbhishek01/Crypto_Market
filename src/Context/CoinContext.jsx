@@ -24,7 +24,7 @@ const CoinContext = ({children}) => {
 
      const[allcoin,setAllcoin]=useState([]);
      const[currency,setcurrency]=useState({
-        name:"USD",
+        name:"usd",
         symbol:"$"
 
      })
@@ -33,17 +33,17 @@ const CoinContext = ({children}) => {
      useEffect(()=>{
 
         const fetchallcoin=async()=>{
-            const res=await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd', options)
+            const res=await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency.name}`, options)
             const data=await res.json();  
             setAllcoin(data)      
             console.log(data)
 
          }
          fetchallcoin();                
-     },[])
+     },[currency])
   return (
   
-    <coincontextapi.Provider value={{allcoin,currency,setcurrency}}>                                   
+    <coincontextapi.Provider value={{allcoin,setAllcoin,currency,setcurrency}}>                                   
         {children}                              
     </coincontextapi.Provider>
   )

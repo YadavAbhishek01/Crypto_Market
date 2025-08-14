@@ -8,3 +8,7 @@
   color: white;
   background: linear-gradient( #9198e5,#221055);
 }
+a{
+  text-decoration: none;      
+  color: white;   
+}

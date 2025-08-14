@@ -1,0 +1,18 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; /* consistent spacing */
+    width: 100%;
+    padding: 1rem 0;
+    margin-top: 2rem; /* adds space from content above */
+    border-top: 1px solid rgb(90, 90, 90);
+    background-color: #121212; /* optional: add background */
+    color: white; /* optional: improve readability */
+  }
+  
+  .footer p {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+  }
+  
