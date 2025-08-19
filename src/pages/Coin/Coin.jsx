@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { ClipLoader, MoonLoader, PulseLoader, SyncLoader } from 'react-spinners'
 import Chart from 'react-google-charts'
 import { coincontextapi } from '../../Context/CoinContext'
+import Linechart from '../../Componets/LIne chart/Linechart'
 
 const Coin = () => {
 
@@ -14,6 +15,8 @@ const Coin = () => {
   let [color, setColor] = useState("#ffffff");
   let [loading, setLoading] = useState(true);
   const { coinId } = useParams()
+
+  const [historicaldata , setHistoricalData] = useState("");
 
   const{currency}=useContext(coincontextapi)
 
@@ -43,12 +46,20 @@ const Coin = () => {
       setLoading(false)
     }
 
+    const getHistoricalData = async () => {
+      const res = await fetch(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=${currency.name}&days=10&interval=daily`, options);
+      const data = await res.json();
+      console.log(data);
+      setHistoricalData(data);
+    }                   
+
     getcoinDataByid();
+    getHistoricalData();
   }, [coinId])
   console.log(coinIddata)
 
 
-  if (loading || !coinIddata) {
+  if (loading || !coinIddata || !coinIddata.image || !coinIddata.market_data || !historicaldata) {
     return (
       <MoonLoader className='loader'
         color={color}
@@ -60,19 +71,7 @@ const Coin = () => {
       />
     )
   }
-  const data = [
-    ["Year", "Sales", "Expenses"],
-    ["2013", 10, 400],
-    ["2014", 1170, 460],
-    ["2015", 660, 1120],
-    ["2016", 1030, 540],
-  ];
-  const chartoptions = {
-    chart: {
-      title: "Company Performance",
-      subtitle: "Sales and Expenses over the Years",
-    },
-  };
+
 
 
  
@@ -88,13 +87,8 @@ const Coin = () => {
       </div>
 
       <div className="chart">
-      <Chart
-      chartType="Line"
-      width="100%"
-      height="400px"
-      data={data}
-      options={chartoptions}
-    />
+     {/* line chart */}
+     <Linechart historicaldata={historicaldata} />
       </div>
       <div className="coin-details">
         <div className="coin-title">

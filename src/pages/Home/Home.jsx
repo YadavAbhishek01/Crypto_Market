@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import './home.css'
 import { coincontextapi } from '../../Context/CoinContext';
-import { options } from 'joi';
+
 import { Link } from 'react-router-dom';
 
 const Home = () => {
